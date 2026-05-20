@@ -1,64 +1,159 @@
 <html>
+
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="static/style.css">
-  <link rel="stylesheet" href="static/bootstrap.min.css">
-<script>
 
-const logout = async (e) => {
-//Include the code for logout here.
-};
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
 
-let checkSession = ()=>{
-  let curr_user = sessionStorage.getItem("username");
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous">
+    </script>
 
-  if (curr_user && curr_user !== "") {
-    document.getElementById("loginlogout").innerHTML = 
-    '<span class="homepage_links">' + curr_user +'</span>' +
-    '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
-  } else {
-    document.getElementById("loginlogout").innerHTML = 
-    '<a class="homepage_links" href="/login">Login</a>'+
-    '<a class="homepage_links"  href="/register">Register</a>'
-  }
- }
-</script>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+
+    <script>
+
+        const logout = async (e) => {
+            //Include the code for logout here.
+        };
+
+        let checkSession = () => {
+
+            let curr_user = sessionStorage.getItem("username");
+
+            if (curr_user && curr_user !== "") {
+
+                document.getElementById("loginlogout").innerHTML =
+                    '<span class="homepage_links">' + curr_user + '</span>' +
+                    '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
+
+            } else {
+
+                document.getElementById("loginlogout").innerHTML =
+                    '<a class="homepage_links" href="/login">Login</a>' +
+                    '<a class="homepage_links" href="/register">Register</a>'
+
+            }
+
+        }
+
+    </script>
+
 </head>
-<body onload="checkSession()">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-  <div class="container-fluid">
-    <h2 style="padding-right: 5%;">Dealerships</h2>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" style="font-size: larger;" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        <div class="loginlink" id="loginlogout">
+
+<body onload="checkSession()" style="background-color:#f5f5f5;">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm"
+         style="background-color: darkturquoise; padding: 20px;">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold fs-3" href="/">
+                Apex Platinum Auto Group
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarText"
+                    aria-controls="navbarText"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+
+                <!-- Center Login/Register -->
+                <div class="mx-auto">
+
+                    <div class="loginlink d-flex gap-3" id="loginlogout">
+                    </div>
+
+                </div>
+
+                <!-- Right Navigation -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5"
+                          aria-current="page"
+                          href="#">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="/about">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="/contact">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
-        </span>
+
+    </nav>
+
+    <!-- Homepage Content -->
+    <div class="container mt-5 mb-5">
+
+        <div class="bg-white shadow-sm rounded p-5">
+
+            <div class="row align-items-center g-5">
+
+                <!-- Left Side Content -->
+                <div class="col-lg-6">
+
+                    <h1 class="fw-bold mb-4">
+                        Welcome to Apex Platinum Auto Group
+                    </h1>
+
+                    <p class="lead mb-4">
+                        Explore premium domestic and imported vehicles backed by
+                        exceptional customer service, competitive pricing, and a
+                        dealership experience built on trust and professionalism.
+                    </p>
+
+                    <a href="/dealers"
+                       class="btn btn-lg"
+                       style="background-color:aqua;">
+                        View Dealerships
+                    </a>
+
+                </div>
+
+                <!-- Right Side Image -->
+                <div class="col-lg-6">
+
+                    <img src="static/car_dealership.jpg"
+                         class="img-fluid rounded shadow-sm"
+                         alt="Car Dealership"
+                         style="width: 100%">
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
-</nav>
-<div style="display: flex;flex-direction: column;">
-<div class="card" style="width: 50%;margin-top: 50px;align-self: center;">
-  <img src="static/car_dealership.jpg" class="card-img-top" alt="...">
-  <div class="banner">
-    <h5>Welcome to our Dealerships!</h5>
-    <a href="/dealers" class="btn" style="background-color: aqua;margin:10px">View Dealerships</a>
-  </div>
-</div>
-</div>
+
 </body>
+
 </html>
