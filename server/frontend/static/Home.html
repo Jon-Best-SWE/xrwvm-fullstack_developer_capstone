@@ -48,12 +48,18 @@
 <body onload="checkSession()" style="background-color:#f5f5f5;">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm"
-         style="background-color: darkturquoise; padding: 20px;">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-lg"
+     style="
+        background: linear-gradient(90deg, #0f172a, #1e3a8a);
+        padding: 18px 0;
+        border-bottom: 3px solid #38bdf8;
+     ">
 
         <div class="container">
 
-            <a class="navbar-brand fw-bold fs-3" href="/">
+            <a class="navbar-brand fw-bold fs-3 text-white"
+            href="/"
+            style="letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;">
                 Apex Platinum Auto Group
             </a>
 
@@ -72,32 +78,39 @@
             <div class="collapse navbar-collapse" id="navbarText">
 
                 <!-- Center Login/Register -->
-                <div class="mx-auto">
+                <div class="mx-auto flex-grow-1 d-flex justify-content-center">
 
-                    <div class="loginlink d-flex gap-3" id="loginlogout">
+                    <div class="loginlink d-flex gap-3 text-nowrap" id="loginlogout" style="white-space: nowrap;">
                     </div>
 
                 </div>
 
                 <!-- Right Navigation -->
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto align-items-center">
 
                     <li class="nav-item">
-                        <a class="nav-link active fs-5"
+                        <a class="nav-link active fs-5 text-white"
                           aria-current="page"
-                          href="#">
+                          href="#"
+                          style="
+                            background-color: rgba(255,255,255,0.15);
+                            padding: 8px 18px;
+                            border-radius: 10px;
+                            color: white;
+                            font-weight: 600;
+                        ">
                             Home
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="/about">
+                        <a class="nav-link fs-5 text-white" href="/about">
                             About Us
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="/contact">
+                        <a class="nav-link fs-5 text-white" href="/contact">
                             Contact Us
                         </a>
                     </li>
@@ -153,6 +166,28 @@
         </div>
 
     </div>
+
+    <script>
+        // Build logout URL and Make GET request to logout endpoint
+        let logout_url = window.location.origin+"/djangoapp/logout";
+        const res = await fetch(logout_url, {
+            method: "GET",
+        });
+
+        const json = await res.json();
+        if (json) {
+            // Clear session storage and reload page
+            let username = sessionStorage.getItem('username');
+            sessionStorage.removeItem('username');
+            window.location.href = window.location.origin;
+            window.location.reload();
+            // Notify user of logout
+            alert("Logging out "+username+"...")
+        }
+        else {
+            alert("The user could not be logged out.")
+        }
+    </script>
 
 </body>
 
