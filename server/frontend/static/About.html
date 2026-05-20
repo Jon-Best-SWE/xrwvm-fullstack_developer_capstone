@@ -1,68 +1,203 @@
 <html>
+
 <head>
-  <!-- Link the style sheet here -->
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-    <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
-        </div>
-      </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
+<body style="background-color:#f5f5f5;">
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm"
+         style="background-color: darkturquoise; padding: 20px;">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold fs-3" href="/">
+                Apex Platinum Auto Group
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarText">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5" href="/about">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="/contact">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
-      </div>
+
+    </nav>
+
+    <!-- About Section -->
+    <div class="container mt-5">
+
+        <div class="bg-white shadow-sm rounded p-5">
+
+            <div class="text-center mb-5">
+
+                <h1 class="fw-bold mb-3">About Us</h1>
+
+                <p class="lead">
+                    Welcome to Apex Platinum Auto Group, your destination for
+                    premium domestic and imported vehicles. We are committed
+                    to providing exceptional quality, competitive pricing,
+                    and a dealership experience built on trust and professionalism.
+                </p>
+
+            </div>
+
+            <!-- Team Cards -->
+            <div class="row g-4 justify-content-center">
+
+                <!-- Mark -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card h-100 shadow-sm border-0">
+
+                        <img class="card-img-top"
+                             src="/static/person-photo-1.jpg"
+                             alt="Mark Caldwell">
+
+                        <div class="card-body">
+
+                            <h4 class="card-title fw-bold">
+                                Mark Caldwell
+                            </h4>
+
+                            <h6 class="text-muted mb-3">
+                                General Manager
+                            </h6>
+
+                            <p class="card-text">
+                                Mark Caldwell is the General Manager of Apex
+                                Platinum Auto Group and has over 18 years
+                                of experience in automotive sales and operations.
+                                Known for his leadership style and focus on
+                                customer satisfaction, he ensures the dealership
+                                runs efficiently while maintaining strong sales performance.
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer bg-white border-0 pb-4">
+                            <small class="text-muted">
+                                mcaldwell@apexplatinum.com
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Jessica -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card h-100 shadow-sm border-0">
+
+                        <img class="card-img-top"
+                             src="/static/person-photo-2.jpg"
+                             alt="Jessica Ramirez">
+
+                        <div class="card-body">
+
+                            <h4 class="card-title fw-bold">
+                                Jessica Ramirez
+                            </h4>
+
+                            <h6 class="text-muted mb-3">
+                                Sales Manager
+                            </h6>
+
+                            <p class="card-text">
+                                Jessica Ramirez is the lead Sales Manager at
+                                Apex Platinum Auto Group with a strong background
+                                in finance and customer service. She is known
+                                for her approachable personality and ability
+                                to help customers find the perfect vehicle.
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer bg-white border-0 pb-4">
+                            <small class="text-muted">
+                                jramirez@apexplatinum.com
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Tyler -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card h-100 shadow-sm border-0">
+
+                        <img class="card-img-top"
+                             src="/static/person-photo-3.jpg"
+                             alt="Tyler Brooks">
+
+                        <div class="card-body">
+
+                            <h4 class="card-title fw-bold">
+                                Tyler Brooks
+                            </h4>
+
+                            <h6 class="text-muted mb-3">
+                                Floor Sales Representative
+                            </h6>
+
+                            <p class="card-text">
+                                Tyler Brooks specializes in connecting customers
+                                with the right vehicle quickly and comfortably.
+                                With 5 years of experience in automotive sales,
+                                Tyler focuses on making the buying process
+                                simple and stress-free.
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer bg-white border-0 pb-4">
+                            <small class="text-muted">
+                                tbrooks@apexplatinum.com
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-    </div>
-    </div>
-    
-</div>
+
+</body>
 
 </html>
