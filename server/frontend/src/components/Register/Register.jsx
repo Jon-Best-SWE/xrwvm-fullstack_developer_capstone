@@ -54,7 +54,7 @@ const Register = () => {
   return(
     <div className="register_container" style={{width: "50%"}}>
       <div className="header" style={{display: "flex",flexDirection: "row", justifyContent: "space-between"}}>
-          <span className="text" style={{flexGrow:"1"}}>SignUp</span> 
+          <span className="text" style={{flexGrow:"1"}}>SignUp</span>
           <div style={{display: "flex",flexDirection: "row", justifySelf: "end", alignSelf: "start" }}>
           <a href="/" onClick={()=>{gohome()}} style={{justifyContent: "space-between", alignItems:"flex-end"}}>
             <img style={{width:"1cm"}} src={close_icon} alt="X"/>
@@ -69,17 +69,17 @@ const Register = () => {
             <img src={user_icon} className="img_icon" alt='Username'/>
             <input type="text"  name="username" placeholder="Username" className="input_field" onChange={(e) => setUserName(e.target.value)}/>
           </div>
-          <div>
+          <div className="input">
             <img src={user_icon} className="img_icon" alt='First Name'/>
             <input type="text"  name="first_name" placeholder="First Name" className="input_field" onChange={(e) => setFirstName(e.target.value)}/>
           </div>
 
-          <div>
+          <div className="input">
             <img src={user_icon} className="img_icon" alt='Last Name'/>
             <input type="text"  name="last_name" placeholder="Last Name" className="input_field" onChange={(e) => setlastName(e.target.value)}/>
           </div>
 
-          <div>
+          <div className="input">
             <img src={email_icon} className="img_icon" alt='Email'/>
             <input type="email"  name="email" placeholder="email" className="input_field" onChange={(e) => setEmail(e.target.value)}/>
           </div>

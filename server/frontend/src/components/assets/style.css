@@ -5,7 +5,7 @@ img{
 
 .card{
   border: rgb(103, 102, 105) 3px solid;
-  display: flex;  
+  display: flex;
   flex-direction: column;
   margin-left:5%;
   margin-right:5%;
@@ -14,7 +14,7 @@ img{
 }
 
 .row{
-  display: flex;  
+  display: flex;
   flex: 1;
   flex-direction: row;
   margin: auto;
@@ -42,7 +42,7 @@ img{
 }
 
 .homepage_links{
-  color:  rgb(97, 64, 128);
+  color:  white;
   padding: 25%;
   font-size: larger;
   }
@@ -83,22 +83,22 @@ img{
   justify-self: center;
 }
 
-.nav_item{
+/* .nav_item{
   margin-left:15px;
   font-size: 20px;
   color: black;
   align-self: center;
-}
+} */
 
-.username{
+/* .username{
   font: 30px sans-serif;
   color:black;
   justify-content: 'flex-end';
   align-self:flex-end;
   vertical-align: middle;
-}
+} */
 
-.input_panel {
+/* .input_panel {
   display: flex;
   flex-direction: row;
   padding: 20px;
@@ -106,7 +106,7 @@ img{
   justify-content:flex-end;
   align-items: flex-end;
   vertical-align: middle;
-}
+} */
 
 .small_header{
   font: 30px sans-serif;
@@ -121,5 +121,5 @@ img{
     color:#FFF;
     border-radius:50px;
     text-align:center;
-    box-shadow: 2px 2px 3px #999;  
+    box-shadow: 2px 2px 3px #999;
 }

@@ -9,7 +9,7 @@ const Header = () => {
     const res = await fetch(logout_url, {
       method: "GET",
     });
-  
+
     const json = await res.json();
     if (json) {
       let username = sessionStorage.getItem('username');
@@ -22,7 +22,7 @@ const Header = () => {
       alert("The user could not be logged out.")
     }
   };
-    
+
 //The default home page items are the login details panel
 let home_page_items =  <div></div>
 
@@ -38,26 +38,40 @@ if ( curr_user !== null &&  curr_user !== "") {
 }
     return (
         <div>
-          <nav class="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"darkturquoise",height:"1in"}}>
-            <div class="container-fluid">
-              <h2 style={{paddingRight: "5%"}}>Dealerships</h2>
+          <nav className="navbar navbar-expand-lg navbar-dark shadow-lg"
+            style={{
+              background: "linear-gradient(90deg, #0f172a, #1e3a8a)",
+              padding: "18px 0",
+              borderBottom: "3px solid #38bdf8"
+            }}>
+            <div className="container">
+              <a
+              className="navbar-brand fw-bold fs-3 text-white"
+              href="/"
+              style={{
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+                whiteSpace: "nowrap"
+              }}>
+                Apex Platinum Auto Group
+              </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav ms-auto align-items-center">
                   <li class="nav-item">
-                    <a class="nav-link active" style={{fontSize: "larger"}} aria-current="page" href="/">Home</a>
+                    <a className="nav-link fs-5 text-white" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style={{fontSize: "larger"}} href="/about">About Us</a>
+                    <a className="nav-link fs-5 text-white" href="/about">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style={{fontSize: "larger"}} href="/contact">Contact Us</a>
+                    <a className="nav-link fs-5 text-white" href="/contact">Contact Us</a>
                   </li>
                 </ul>
                 <span class="navbar-text">
-                  <div class="loginlink" id="loginlogout">
+                  <div className="d-flex align-items-center gap-3" id="loginlogout">
                   {home_page_items}
                   </div>
                   </span>
