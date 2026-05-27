@@ -28,8 +28,22 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS=['localhost','https://jonbest-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
-CSRF_TRUSTED_ORIGINS=['https://jonbest-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+
+    'jonbest-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',
+
+    'jonbest-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://jonbest-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',
+
+    'https://jonbest-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
@@ -51,6 +65,9 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+
+    'django.middleware.csrf.CsrfViewMiddleware',
+
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -142,4 +159,16 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/static'),
 	os.path.join(BASE_DIR, 'frontend/build'),
 	os.path.join(BASE_DIR, 'frontend/build/static'),
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://jonbest-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai",
+    "https://jonbest-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai",
+]
+
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "jonbest-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai",
+    "jonbest-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai",
 ]
