@@ -4,6 +4,20 @@ import "./Dealers.css";
 import "../assets/style.css";
 import Header from '../Header/Header';
 
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
 
 const PostReview = () => {
   const [dealer, setDealer] = useState({});
@@ -49,12 +63,14 @@ const PostReview = () => {
 
     console.log(jsoninput);
     const res = await fetch(review_url, {
-      method: "POST",
-      headers: {
+        method: "POST",
+        credentials: "include",  
+        headers: {
           "Content-Type": "application/json",
-      },
-      body: jsoninput,
-  });
+          "X-CSRFToken": getCookie("csrftoken") 
+        },
+        body: jsoninput,
+    });
 
   const json = await res.json();
   if (json.status === 200) {
