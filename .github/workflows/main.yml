@@ -48,5 +48,5 @@ jobs:
 
       - name: Run Linter
         run: |
-          find ./server/database -name "*.js" -exec jshint {} +
+          find ./server/database -name "*.js" -exec jshint --esversion=8 {} +
           echo "Linted all JS files successfully"
