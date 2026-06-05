@@ -15,9 +15,11 @@ import json
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
+
 # Create your views here.
 
-# Create a `login_request` view to handle sign in request
+
+# Create a `login_request` view...
 @csrf_exempt
 def login_user(request):
 
@@ -141,7 +143,9 @@ def get_dealer_reviews(request, dealer_id):
 
     if dealer_id:
 
-        endpoint = f"/fetchReviews/dealer/{dealer_id}"
+        endpoint = (
+            f"/fetchReviews/dealer/{dealer_id}"
+        )
         reviews = get_request(endpoint)
 
         for review_detail in reviews:
@@ -153,7 +157,9 @@ def get_dealer_reviews(request, dealer_id):
             else:
                 review_detail["sentiment"] = "neutral"
 
-        return JsonResponse({"status": 200, "reviews": reviews})
+        return JsonResponse(
+            {"status": 200, "reviews": reviews}
+        )
 
     return JsonResponse({"status": 400, "message": "Bad Request"})
 
@@ -171,4 +177,6 @@ def add_review(request):
         except Exception:
             return JsonResponse({"status": 401, "message": "Error in posting review"})
 
-    return JsonResponse({"status": 403, "message": "Unauthorized"})
+    return JsonResponse(
+        {"status": 403, "message": "Unauthorized"}
+    )
