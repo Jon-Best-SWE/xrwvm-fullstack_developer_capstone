@@ -113,7 +113,7 @@ def get_cars(request):
     return JsonResponse({"CarModels": cars})
 
 
-# Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
+# Update the `get_dealerships`
 def get_dealerships(request, state="All"):
 
     if state == "All":
@@ -150,7 +150,9 @@ def get_dealer_reviews(request, dealer_id):
 
         for review_detail in reviews:
 
-            sentiment_response = analyze_review_sentiments(review_detail["review"])
+            sentiment_response = analyze_review_sentiments(
+                review_detail["review"]
+            )
 
             if sentiment_response and "sentiment" in sentiment_response:
                 review_detail["sentiment"] = sentiment_response["sentiment"]
@@ -175,7 +177,9 @@ def add_review(request):
             return JsonResponse({"status": 200})
 
         except Exception:
-            return JsonResponse({"status": 401, "message": "Error in posting review"})
+            return JsonResponse(
+                {"status": 401, "message": "Error in posting review"}
+            )
 
     return JsonResponse(
         {"status": 403, "message": "Unauthorized"}
