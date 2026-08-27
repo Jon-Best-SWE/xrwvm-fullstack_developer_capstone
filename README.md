@@ -93,4 +93,4 @@ The project demonstrates my ability to work within an existing codebase, learn a
 
 ## Repository
 
-GitHub: https://github.com/Jon-Best-SWE/xrwvm-fullstack_developer_capstone
+GitHub: https://github.com/Jon-Best-SWE/IBM-Full-Stack-Software-Developer-Capstone
